@@ -1,0 +1,14 @@
+<div>
+  <input
+    type="text"
+    maxlength="14"
+    autocomplete="off"
+    #searchElementRef
+    [(ngModel)]="query"
+    placeholder="Type or scan code"
+    (ngModelChange)="onQueryChange($event)"
+  />
+</div>
+
+<div>Data entry time:</div>
+{{delayTime}}
