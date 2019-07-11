@@ -1,5 +1,6 @@
 import * as _assign from 'lodash/assign';
 import {from, fromEvent, Subject} from 'rxjs';
+import {DeviceDetectorService, DeviceInfo} from 'ngx-device-detector';
 import {AfterViewInit, Component, ElementRef, OnDestroy, ViewChild} from '@angular/core';
 import {debounceTime, distinctUntilChanged, filter, map, mergeMap, takeUntil} from 'rxjs/operators';
 
@@ -9,6 +10,16 @@ import {debounceTime, distinctUntilChanged, filter, map, mergeMap, takeUntil} fr
   styleUrls: ['./input-definition.component.scss']
 })
 export class InputDefinitionComponent implements AfterViewInit, OnDestroy {
+  public userAgent: string;
+  public isMobile: boolean;
+  public isTablet: boolean;
+  private deviceInfo: DeviceInfo = this.deviceService.getDeviceInfo();
+
+  constructor(private deviceService: DeviceDetectorService) {
+    this.userAgent = this.deviceInfo.userAgent;
+    this.isMobile = deviceService.isMobile();
+    this.isTablet = deviceService.isTablet();
+  }
 
   /**
    * Used for cleaning input logic
@@ -21,10 +32,16 @@ export class InputDefinitionComponent implements AfterViewInit, OnDestroy {
   public delayTime: number = null;
 
   /**
+   * Used for example
+   */
+  public inputType: string = null;
+
+  /**
    * Used to create observable
    */
   public queryChanged: Subject<string> = new Subject<string>();
 
+  // @ts-ignore
   @ViewChild('searchElementRef') public searchElementRef: ElementRef;
 
   /**
@@ -51,7 +68,6 @@ export class InputDefinitionComponent implements AfterViewInit, OnDestroy {
      */
     from(events)
       .pipe(
-
         /**
          * Look at the
          * {@Link https://rxjs-dev.firebaseapp.com/api/operators/mergeMap}
@@ -121,6 +137,7 @@ export class InputDefinitionComponent implements AfterViewInit, OnDestroy {
       .subscribe((event: any) => {
         if (event.duration > 0.02) {
           this.delayTime = event.duration;
+          this.inputType = 'Keyboard input';
           /**
            * Keyboard input.
            * Use the data in the function.
@@ -129,6 +146,7 @@ export class InputDefinitionComponent implements AfterViewInit, OnDestroy {
            */
         } else if (event.duration <= 0.02) {
           this.delayTime = event.duration;
+          this.inputType = 'Input from the scanner';
           /**
            * Input from the scanner.
            * Use the data in the function.
