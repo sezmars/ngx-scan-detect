@@ -1,8 +1,25 @@
+<section class="buttons">
+    <nav mat-tab-nav-bar>
+        <a mat-tab-link
+           routerLinkActive
+           routerLink="/ngx-barcodeput"
+           #ngxBarCodePut="routerLinkActive"
+           [active]="ngxBarCodePut.isActive">
+            ngx-barcodeput
+        </a>
+        <a mat-tab-link
+           routerLinkActive
+           routerLink="/ngx-barcodeput-lib"
+           #ngxBarCodePutLib="routerLinkActive"
+           [active]="ngxBarCodePutLib.isActive">
+            barcodeput-lib
+        </a>
+    </nav>
+</section>
 <div>
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <app-ngx-barcodeput></app-ngx-barcodeput>
-  <app-ngx-barcodeput-lib></app-ngx-barcodeput-lib>
+    <h1>
+        Welcome to {{ title }}!
+    </h1>
+    <router-outlet></router-outlet>
 </div>
 

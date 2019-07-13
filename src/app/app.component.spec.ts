@@ -1,13 +1,14 @@
-import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import {NgxBarCodePutModule} from 'ngx-barcodeput';
+import { TestBed, async } from '@angular/core/testing';
+import {BrowserModule} from '@angular/platform-browser';
+import {DeviceDetectorModule} from 'ngx-device-detector';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgxBarCodePutComponent} from './examples/ngx-barcodeput';
 import {NgxBarCodePutLibComponent} from './examples/ngx-barcodeput-lib';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {BrowserModule} from '@angular/platform-browser';
-import {MatCardModule, MatInputModule, MatTooltipModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {DeviceDetectorModule} from 'ngx-device-detector';
-import {NgxBarCodePutModule} from 'ngx-barcodeput';
+import {MatCardModule, MatInputModule, MatTabsModule, MatTooltipModule} from '@angular/material';
+import {RouterTestingModule} from '@angular/router/testing';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -16,10 +17,12 @@ describe('AppComponent', () => {
         FormsModule,
         BrowserModule,
         MatCardModule,
+        MatTabsModule,
         MatInputModule,
         MatTooltipModule,
         ReactiveFormsModule,
         NgxBarCodePutModule,
+        RouterTestingModule,
         BrowserAnimationsModule,
         DeviceDetectorModule.forRoot(),
       ],

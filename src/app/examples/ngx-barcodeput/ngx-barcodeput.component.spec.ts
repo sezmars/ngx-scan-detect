@@ -1,11 +1,11 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import {NgxBarCodePutComponent} from './ngx-barcodeput.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {BrowserModule} from '@angular/platform-browser';
-import {MatCardModule, MatInputModule, MatTooltipModule} from '@angular/material';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {DeviceDetectorModule} from 'ngx-device-detector';
 import {NgxBarCodePutModule} from 'ngx-barcodeput';
+import {BrowserModule} from '@angular/platform-browser';
+import {DeviceDetectorModule} from 'ngx-device-detector';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {NgxBarCodePutComponent} from './ngx-barcodeput.component';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatCardModule, MatInputModule, MatTooltipModule} from '@angular/material';
 
 describe('NgxBarCodePutComponent', () => {
   let component: NgxBarCodePutComponent;
