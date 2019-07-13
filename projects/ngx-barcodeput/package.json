@@ -1,0 +1,41 @@
+{
+  "name": "ngx-barcodeput",
+  "version": "1.0.1",
+  "description": "This package helps determine input using a barcode-scanner.",
+  "author": "Roman Kolesnikov / @sezmars",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sezmars/barcode-scanner-input-detect.git"
+  },
+  "homepage": "https://sezmars.github.io/barcode-scanner-input-detect",
+  "bugs": {
+    "url": "https://github.com/sezmars/barcode-scanner-input-detect/issues"
+  },
+  "license": "MIT",
+  "keywords": [
+    "ngx",
+    "angular",
+    "barcode",
+    "scanner",
+    "detectet",
+    "definition",
+    "scanner parser",
+    "scanner-parser",
+    "barcode scanner",
+    "barcode-scanner",
+    "scanner input definer",
+    "scanner-input-definer",
+    "barcode scanner parser",
+    "barcode-scanner-parser",
+    "scanner input recognizer",
+    "scanner-input-recognizer",
+    "barcode scanner input definer",
+    "barcode-scanner-input-definer",
+    "barcode scanner input recognizer",
+    "barcode-scanner-input-recognizer"
+  ],
+  "peerDependencies": {
+    "@angular/common": "^7.2.0",
+    "@angular/core": "^7.2.0"
+  }
+}

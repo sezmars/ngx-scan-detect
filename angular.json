@@ -3,21 +3,21 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "code-scanner-definition": {
+    "barcode-scanner-input-detect": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
       "prefix": "app",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "sass"
+          "style": "scss"
         }
       },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/code-scanner-definition",
+            "outputPath": "dist/barcode-scanner-input-detect",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "code-scanner-definition:build"
+            "browserTarget": "barcode-scanner-input-detect:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "code-scanner-definition:build:production"
+              "browserTarget": "barcode-scanner-input-detect:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "code-scanner-definition:build"
+            "browserTarget": "barcode-scanner-input-detect:build"
           }
         },
         "test": {
@@ -107,7 +107,7 @@
         }
       }
     },
-    "code-scanner-definition-e2e": {
+    "barcode-scanner-input-detect-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -116,11 +116,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "code-scanner-definition:serve"
+            "devServerTarget": "barcode-scanner-input-detect:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "code-scanner-definition:serve:production"
+              "devServerTarget": "barcode-scanner-input-detect:serve:production"
             }
           }
         },
@@ -134,7 +134,112 @@
           }
         }
       }
+    },
+    "ngx-barcode-scanner-input-detect": {
+      "root": "projects/ngx-barcode-scanner-input-detect",
+      "sourceRoot": "projects/ngx-barcode-scanner-input-detect/src",
+      "projectType": "library",
+      "prefix": "ngx-barcode-scanner-input-detect",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-barcode-scanner-input-detect/tsconfig.lib.json",
+            "project": "projects/ngx-barcode-scanner-input-detect/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-barcode-scanner-input-detect/src/test.ts",
+            "tsConfig": "projects/ngx-barcode-scanner-input-detect/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-barcode-scanner-input-detect/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-barcode-scanner-input-detect/tsconfig.lib.json",
+              "projects/ngx-barcode-scanner-input-detect/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "cccc": {
+      "root": "projects/cccc",
+      "sourceRoot": "projects/cccc/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/cccc/tsconfig.lib.json",
+            "project": "projects/cccc/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/cccc/src/test.ts",
+            "tsConfig": "projects/cccc/tsconfig.spec.json",
+            "karmaConfig": "projects/cccc/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/cccc/tsconfig.lib.json",
+              "projects/cccc/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "ngx-barcodeput": {
+      "root": "projects/ngx-barcodeput",
+      "sourceRoot": "projects/ngx-barcodeput/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-barcodeput/tsconfig.lib.json",
+            "project": "projects/ngx-barcodeput/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-barcodeput/src/test.ts",
+            "tsConfig": "projects/ngx-barcodeput/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-barcodeput/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-barcodeput/tsconfig.lib.json",
+              "projects/ngx-barcodeput/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
-  "defaultProject": "code-scanner-definition"
+  "defaultProject": "barcode-scanner-input-detect"
 }

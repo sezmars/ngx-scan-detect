@@ -1,0 +1,23 @@
+<div>
+    <mat-form-field>
+<input matInput
+       type="text"
+       ngxBarCodePut
+       maxlength="14"
+       [skipStart]="2"
+       [debounce]="300"
+       autocomplete="off"
+       [matTooltipPosition]="'right'"
+       placeholder="Type or scan code"
+       [disabled]="isMobile || isTablet"
+       (onDetected)="onDetected($event)"
+       (onBackspace)="onBackspace($event)"
+       matTooltip="Press the focus on the input box and scan the item">
+    </mat-form-field>
+</div>
+<div class="container-info">
+    <mat-card>Input Type: {{inputType}} <br> Entry Time: {{delayTime}}</mat-card>
+</div>
+<div class="device-info">
+    {{(isMobile || isTablet) ? 'Not supported on mobile devices.' : userAgent}}
+</div>
