@@ -66,101 +66,101 @@ export class NgxBarCodePutLibComponent implements AfterViewInit, OnDestroy {
      * {@Link http://reactivex.io/documentation/operators/from.html}
      */
     from(events)
-        .pipe(
-            /**
-             * Look at the
-             * {@Link https://rxjs-dev.firebaseapp.com/api/operators/mergeMap}
-             */
-            mergeMap((event) => fromEvent(this.searchElementRef.nativeElement, event)),
-
-            /**
-             * Prepare input data
-             */
-            map((event: KeyboardEvent) => {
-              switch (event.type) {
-                case 'keydown':
-
-                  /**
-                   * Since "which" is deprecated, we use it for a temporary variable
-                   * and set the processing time keydown .
-                   */
-                  pressed[event.which] = event.timeStamp;
-                  break;
-                case 'keyup':
-
-                  /**
-                   * In the delay set the difference between keydown and keyup events
-                   */
-                  Object.assign(event, {duration: (event.timeStamp - pressed[event.which]) / 1000});
-                  break;
-              }
-
-              /**
-               * @return {event: KeyboardEvent}
-               */
-              return event;
-            }),
-            filter((e: KeyboardEvent) => {
-              if (e.keyCode === 8 || e.code === 'Backspace' || e.which === 8) {
-                /**
-                 * Used to clear data.
-                 */
-              }
-
-              /**
-               * Return data after typed in two characters
-               */
-              return (e.target as HTMLInputElement).value.length > 2;
-            }),
-
-            /**
-             * Data entry delay is used to limit requests
-             */
-            debounceTime(300),
-
-            /**
-             * Look at the
-             * {@Link http://reactivex.io/documentation/operators/distinct.html}
-             */
-            distinctUntilChanged(),
-        )
+      .pipe(
+        /**
+         * Look at the
+         * {@Link https://rxjs-dev.firebaseapp.com/api/operators/mergeMap}
+         */
+        mergeMap((event) => fromEvent(this.searchElementRef.nativeElement, event)),
 
         /**
-         * Use for unsubscribe
+         * Prepare input data
          */
-        .pipe(takeUntil(this.destroy$))
+        map((event: KeyboardEvent) => {
+          switch (event.type) {
+            case 'keydown':
 
-        /**
-         * Subscribe to the input data and determine the delay time for our purposes.
-         */
-        .subscribe((event: any) => {
-          if (event.duration > 0.02) {
-            this.delayTime = event.duration;
-            this.inputType = 'Keyboard input';
+              /**
+               * Since "which" is deprecated, we use it for a temporary variable
+               * and set the processing time keydown .
+               */
+              pressed[event.which] = event.timeStamp;
+              break;
+            case 'keyup':
+
+              /**
+               * In the delay set the difference between keydown and keyup events
+               */
+              Object.assign(event, {duration: (event.timeStamp - pressed[event.which]) / 1000});
+              break;
+          }
+
+          /**
+           * @return {event: KeyboardEvent}
+           */
+          return event;
+        }),
+        filter((e: KeyboardEvent) => {
+          if (e.keyCode === 8 || e.code === 'Backspace' || e.which === 8) {
             /**
-             * Keyboard input.
-             * Use the data in the function.
-             * e.g
-             * this.someFunction(event.target.value);
-             */
-          } else if (event.duration <= 0.02) {
-            this.delayTime = event.duration;
-            this.inputType = 'Input from the scanner';
-            /**
-             * Input from the scanner.
-             * Use the data in the function.
-             * e.g
-             * this.someFunction(event.target.value);
-             */
-          } else if (event.which === 13) {
-            /**
-             * Input with the enter key.
-             * Use the data in the function.
-             * e.g
-             * this.someFunction(event.target.value);
+             * Used to clear data.
              */
           }
-        });
+
+          /**
+           * Return data after typed in two characters
+           */
+          return (e.target as HTMLInputElement).value.length > 2;
+        }),
+
+        /**
+         * Data entry delay is used to limit requests
+         */
+        debounceTime(300),
+
+        /**
+         * Look at the
+         * {@Link http://reactivex.io/documentation/operators/distinct.html}
+         */
+        distinctUntilChanged(),
+      )
+
+      /**
+       * Use for unsubscribe
+       */
+      .pipe(takeUntil(this.destroy$))
+
+      /**
+       * Subscribe to the input data and determine the delay time for our purposes.
+       */
+      .subscribe((event: any) => {
+        if (event.duration > 0.02) {
+          this.delayTime = event.duration;
+          this.inputType = 'Keyboard input';
+          /**
+           * Keyboard input.
+           * Use the data in the function.
+           * e.g
+           * this.someFunction(event.target.value);
+           */
+        } else if (event.duration <= 0.02) {
+          this.delayTime = event.duration;
+          this.inputType = 'Input from the scanner';
+          /**
+           * Input from the scanner.
+           * Use the data in the function.
+           * e.g
+           * this.someFunction(event.target.value);
+           */
+        } else if (event.which === 13) {
+          /**
+           * Input with the enter key.
+           * Use the data in the function.
+           * e.g
+           * this.someFunction(event.target.value);
+           */
+        }
+      });
   }
 
   public onQueryChange(query) {

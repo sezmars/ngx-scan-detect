@@ -11,24 +11,25 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatCardModule, MatInputModule, MatTabsModule, MatTooltipModule} from '@angular/material';
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        NgxBarCodePutComponent,
-        NgxBarCodePutLibComponent
-    ],
-    imports: [
-        FormsModule,
-        BrowserModule,
-        MatTabsModule,
-        MatCardModule,
-        MatInputModule,
-        MatTooltipModule,
-        AppRoutingModule,
-        ReactiveFormsModule,
-        NgxBarCodePutModule,
-        BrowserAnimationsModule,
-        DeviceDetectorModule.forRoot(),
-    ],
-    bootstrap: [AppComponent]
+  declarations: [
+    AppComponent,
+    NgxBarCodePutComponent,
+    NgxBarCodePutLibComponent
+  ],
+  imports: [
+    FormsModule,
+    BrowserModule,
+    MatTabsModule,
+    MatCardModule,
+    MatInputModule,
+    MatTooltipModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    NgxBarCodePutModule,
+    BrowserAnimationsModule,
+    DeviceDetectorModule.forRoot(),
+  ],
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule {
+}
