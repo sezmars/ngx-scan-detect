@@ -1,14 +1,14 @@
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
 import {NgxBarCodePutModule} from 'ngx-barcodeput';
-import { TestBed, async } from '@angular/core/testing';
+import {async, TestBed} from '@angular/core/testing';
 import {BrowserModule} from '@angular/platform-browser';
 import {DeviceDetectorModule} from 'ngx-device-detector';
+import {RouterTestingModule} from '@angular/router/testing';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgxBarCodePutComponent} from './examples/ngx-barcodeput';
 import {NgxBarCodePutLibComponent} from './examples/ngx-barcodeput-lib';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatCardModule, MatInputModule, MatTabsModule, MatTooltipModule} from '@angular/material';
-import {RouterTestingModule} from '@angular/router/testing';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
