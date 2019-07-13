@@ -44,8 +44,7 @@ export class NgxBarCodePutDirective implements AfterViewInit, OnDestroy {
    */
   private destroy$ = new Subject();
 
-  constructor(private elementRef: ElementRef) {
-  }
+  constructor(private elementRef: ElementRef) {}
 
   public ngAfterViewInit() {
 
