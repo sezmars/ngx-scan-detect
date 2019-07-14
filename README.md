@@ -1,4 +1,4 @@
-# ngx-barcodeput [![NPM version](https://img.shields.io/npm/v/ngx-barcodeput.svg?style=flat)](https://www.npmjs.com/package/ngx-barcodeput) [![NPM monthly downloads](https://img.shields.io/npm/dm/ngx-barcodeput.svg?style=flat)](https://npmjs.org/package/ngx-barcodeput)  [![NPM total downloads](https://img.shields.io/npm/dt/ngx-barcodeput.svg?style=flat)](https://npmjs.org/package/ngx-barcodeput)
+# ngx-barcodeput [![NPM version](https://img.shields.io/npm/v/ngx-barcodeput.svg?style=flat)](https://www.npmjs.com/package/ngx-barcodeput) [![NPM monthly downloads](https://img.shields.io/npm/dm/ngx-barcodeput.svg?style=flat)](https://npmjs.org/package/ngx-barcodeput)  [![NPM total downloads](https://img.shields.io/npm/dt/ngx-barcodeput.svg?style=flat)](https://npmjs.org/package/ngx-barcodeput) [![Made with Angular](https://img.shields.io/badge/Made%20with-Angular-E13137.svg)](https://angular.io)
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.3.
