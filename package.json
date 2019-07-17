@@ -29,6 +29,8 @@
     "barcode-scanner-parser",
     "scanner input recognizer",
     "scanner-input-recognizer",
+    "barcode scanner input detect",
+    "barcode-scanner-input-detect",
     "barcode scanner input definer",
     "barcode-scanner-input-definer",
     "barcode scanner input recognizer",
