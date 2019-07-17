@@ -81,9 +81,9 @@ You can then use the directive in your templates:
     <input type="text"
        ngxBarCodePut
        maxlength="14"
+       [skipStart]="5"
        [debounce]="300"
        autocomplete="off"
-       [skipStartLength]="5"
        (onDetected)="onDetected($event)"
        (onBackspace)="onBackspace($event)">
        `
