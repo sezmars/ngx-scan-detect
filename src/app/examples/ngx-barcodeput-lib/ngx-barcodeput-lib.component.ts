@@ -152,13 +152,6 @@ export class NgxBarCodePutLibComponent implements AfterViewInit, OnDestroy {
            * e.g
            * this.someFunction(event.target.value);
            */
-        } else if (event.which === 13) {
-          /**
-           * Input with the enter key.
-           * Use the data in the function.
-           * e.g
-           * this.someFunction(event.target.value);
-           */
         }
       });
   }

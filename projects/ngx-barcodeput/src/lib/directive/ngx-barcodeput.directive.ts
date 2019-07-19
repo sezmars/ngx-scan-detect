@@ -145,12 +145,6 @@ export class NgxBarCodePutDirective implements AfterViewInit, OnDestroy {
            * Input from the scanner.
            */
           this.onDetected.emit({value: event.target.value, time: event.duration, type: 'scanner'});
-        } else if (event.which === 13) {
-
-          /**
-           * Input with the enter key.
-           */
-          this.onDetected.emit({value: event.target.value, time: event.duration, type: 'keyboard:enter'});
         }
       });
   }
