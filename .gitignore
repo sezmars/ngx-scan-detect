@@ -36,3 +36,5 @@ yarn-error.log
 
 # User specific bazel settings
 .bazelrc.user
+
+command.txt
