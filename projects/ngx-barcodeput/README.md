@@ -50,21 +50,21 @@ You can then use the directive in your templates:
        [debounce]="300"
        autocomplete="off"
        [skipStartLength]="3"
-       (onDetected)="onDetected($event)"
-       (onBackspace)="onBackspace($event)">
+       (onDelete)="onBackspace($event)"
+       (onDetected)="onDetected($event)">
        `
 })
 
 export class AppComponent {
   public onDetected(event: IDetect) {
-    console.log(event.type, event.time, event.value); 
-    /* keyboard, 0.1040050000010524, 23223 */
-    /* scanner, 0.040050000010524, 23223 */
+    console.log(event); 
+    /* {event: KeyboardEvent, value: "sezmars", time: 0.07083499999716878, type: "scanner"} */
+    /* {event: KeyboardEvent, value: "3333333", time: 0.17083499999716878, type: "keyboard"} */
   }
 
-  public onBackspace(event: IBackspace) {
-    console.log(event.code, event.keyName, event.value);
-    /* 8, "Backspace", "2322" */
+  public onDelete(event: IDelete) {
+    console.log(event);
+    /* {event: KeyboardEvent, value: "3333333", type: "delete"} */
   }
 }
 ```
@@ -75,5 +75,5 @@ export class AppComponent {
 | ------------- | ---- | ------- | ----------- |
 | `debounce` | number | `0` | This property is necessary for scenarios such as type-ahead where the rate of user input must be controlled. |
 | `skipStart` | number | `0` | Allows you to ignore the first values of the length of the input data. The search begins after entering the first character if the value is 0.|
-| `onDetected` | event | `empty` | Returns object with input value, data entry time and device type: ` keyboard or scanner`. |
-| `onBackspace` | event | `empty` | Returns the object with input value, the code and name of the backspace key. |
+| `onDetected` | event | `empty` | Returns object with keyboard event, input value, data entry time and device type: ` keyboard or scanner`. |
+| `onDelete` | event | `empty` | Returns an object with input value, keyboard event, and type. |
