@@ -100,17 +100,18 @@ export class NgxBarCodePutLibComponent implements AfterViewInit, OnDestroy {
            */
           return event;
         }),
-        filter((e: KeyboardEvent) => {
-          if (e.keyCode === 8 || e.code === 'Backspace' || e.which === 8) {
+        filter((event: KeyboardEvent) => {
+          if (event.keyCode === 8 || event.code === 'Backspace' || event.which === 8) {
             /**
              * Used to clear data.
              */
+            console.log({event, value: (event.target as HTMLInputElement).value, type: 'delete'});
           }
 
           /**
            * Return data after typed in two characters
            */
-          return (e.target as HTMLInputElement).value.length > 2;
+          return (event.target as HTMLInputElement).value.length > 2;
         }),
 
         /**
@@ -143,6 +144,7 @@ export class NgxBarCodePutLibComponent implements AfterViewInit, OnDestroy {
            * e.g
            * this.someFunction(event.target.value);
            */
+          console.log(event, event.target.value, event.duration, 'keyboard');
         } else if (event.duration <= 0.02) {
           this.delayTime = event.duration;
           this.inputType = 'Input from the scanner';
@@ -152,6 +154,7 @@ export class NgxBarCodePutLibComponent implements AfterViewInit, OnDestroy {
            * e.g
            * this.someFunction(event.target.value);
            */
+          console.log(event, event.target.value, event.duration, 'scanner');
         }
       });
   }

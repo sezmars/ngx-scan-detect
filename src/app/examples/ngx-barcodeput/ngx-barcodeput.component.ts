@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {IBackspace, IDetect} from 'ngx-barcodeput';
+import {IDelete, IDetect} from 'ngx-barcodeput';
 import {DeviceDetectorService, DeviceInfo} from 'ngx-device-detector';
 
 @Component({
@@ -34,15 +34,15 @@ export class NgxBarCodePutComponent {
     this.delayTime = event.time;
     this.inputType = event.type;
 
-    console.log(event.type, event.time, event.value);
+    console.log(event);
   }
 
-  public onBackspace(event: IBackspace) {
+  public onDelete(event: IDelete) {
 
     /**
      * Used to clear data.
      */
-    console.log(event.code, event.keyName, event.value);
+    console.log(event);
   }
 
 }

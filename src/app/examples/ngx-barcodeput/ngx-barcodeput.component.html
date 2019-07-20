@@ -9,9 +9,9 @@
            autocomplete="off"
            [matTooltipPosition]="'right'"
            placeholder="Type or scan code"
+           (onDelete)="onDelete($event)"
            [disabled]="isMobile || isTablet"
            (onDetected)="onDetected($event)"
-           (onBackspace)="onBackspace($event)"
            matTooltip="Press the focus on the input box and scan the item">
   </mat-form-field>
 </div>

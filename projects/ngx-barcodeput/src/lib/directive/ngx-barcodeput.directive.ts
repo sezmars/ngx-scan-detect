@@ -5,12 +5,13 @@ import {AfterViewInit, Directive, ElementRef, EventEmitter, Input, OnDestroy, Ou
 export interface IDetect {
   type?: string;
   time?: number;
+  event?: KeyboardEvent;
   value?: string | number;
 }
 
-export interface IBackspace {
-  code?: number;
-  keyName?: string;
+export interface IDelete {
+  type?: string;
+  event?: KeyboardEvent;
   value?: string | number;
 }
 
@@ -30,14 +31,14 @@ export class NgxBarCodePutDirective implements AfterViewInit, OnDestroy {
   @Input() public skipStart: number = 0;
 
   /**
+   * Data cleansing event
+   */
+  @Output() public onDelete: EventEmitter<IDelete> = new EventEmitter();
+
+  /**
    * Event after data entry
    */
   @Output() public onDetected: EventEmitter<IDetect> = new EventEmitter();
-
-  /**
-   * Data cleansing event
-   */
-  @Output() public onBackspace: EventEmitter<IBackspace> = new EventEmitter();
 
   /**
    * Use for unsubscribe
@@ -98,18 +99,18 @@ export class NgxBarCodePutDirective implements AfterViewInit, OnDestroy {
            */
           return event;
         }),
-        filter((e: KeyboardEvent) => {
-          if (e.keyCode === 8 || e.code === 'Backspace' || e.which === 8) {
+        filter((event: KeyboardEvent) => {
+          if (event.keyCode === 8 || event.code === 'Backspace' || event.which === 8) {
             /**
              * Used to clear data.
              */
-            this.onBackspace.emit({value: (e.target as HTMLInputElement).value, code: 8, keyName: 'Backspace'});
+            this.onDelete.emit({event, value: (event.target as HTMLInputElement).value, type: 'delete'});
           }
 
           /**
            * Return data after typed in two characters.
            */
-          return (e.target as HTMLInputElement).value.length > this.skipStart;
+          return (event.target as HTMLInputElement).value.length > this.skipStart;
         }),
 
         /**
@@ -138,13 +139,13 @@ export class NgxBarCodePutDirective implements AfterViewInit, OnDestroy {
           /**
            * Keyboard input.
            */
-          this.onDetected.emit({value: event.target.value, time: event.duration, type: 'keyboard'});
+          this.onDetected.emit({event, value: event.target.value, time: event.duration, type: 'keyboard'});
         } else if (event.duration <= 0.02) {
 
           /**
            * Input from the scanner.
            */
-          this.onDetected.emit({value: event.target.value, time: event.duration, type: 'scanner'});
+          this.onDetected.emit({event, value: event.target.value, time: event.duration, type: 'scanner'});
         }
       });
   }
