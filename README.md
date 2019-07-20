@@ -84,7 +84,7 @@ You can then use the directive in your templates:
        [debounce]="300"
        autocomplete="off"
        [skipStartLength]="3"
-       (onDelete)="onBackspace($event)"
+       (onDelete)="onDelete($event)"
        (onDetected)="onDetected($event)">
        `
 })
