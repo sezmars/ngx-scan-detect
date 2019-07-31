@@ -1,6 +1,6 @@
 {
   "name": "barcode-scanner-input-detect",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "This repository helps determine input using a barcode-scanner.",
   "author": "Roman Kolesnikov / @sezmars",
   "repository": {

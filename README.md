@@ -38,8 +38,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 **[Demo](https://sezmars.github.io/barcode-scanner-input-detect/)**
 
-*Formerly called [ngx-barcodeput](https://github.com/sezmars/barcode-scanner-input-detect)*
-
 Angular directive for handling input events. Useful for determine input using a barcode-scanner.
 
 Like binding to a regular `type` event in a template, you can do something like this:
