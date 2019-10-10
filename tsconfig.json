@@ -20,35 +20,6 @@
       "dom"
     ],
     "paths": {
-      "ngx-code-scanner-detect": [
-        "dist/ngx-code-scanner-detect",
-        "dist/ngx-code-scanner-detect"
-      ],
-      "ngx-code-scanner-detect/*": [
-        "dist/ngx-code-scanner-detect/*",
-        "dist/ngx-code-scanner-detect/*"
-      ],
-      "ngx-scanner-detect": [
-        "dist/ngx-scanner-detect"
-      ],
-      "ngx-scanner-detect/*": [
-        "dist/ngx-scanner-detect/*"
-      ],
-      "ngx-barcode-scanner-input-detect": [
-        "dist/ngx-barcode-scanner-input-detect"
-      ],
-      "ngx-barcode-scanner-input-detect/*": [
-        "dist/ngx-barcode-scanner-input-detect/*"
-      ],
-      "cccc": [
-        "dist/cccc"
-      ],
-      "cccc/*": [
-        "dist/cccc/*"
-      ],
-      "ngx-barcodeput": [
-        "dist/ngx-barcodeput"
-      ],
       "ngx-barcodeput/*": [
         "dist/ngx-barcodeput/*"
       ]
