@@ -36,6 +36,9 @@
     "barcode scanner input recognizer",
     "barcode-scanner-input-recognizer"
   ],
+  "dependencies": {
+    "tslib": "^2.0.0"
+  },
   "peerDependencies": {
     "@angular/common": "^7.2.0",
     "@angular/core": "^7.2.0"
