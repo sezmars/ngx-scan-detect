@@ -90,13 +90,13 @@ You can then use the directive in your templates:
 export class AppComponent {
   public onDetected(event: IDetect) {
     console.log(event); 
-    /* {event: KeyboardEvent, value: "sezmars", time: 0.07083499999716878, type: "scanner"} */
-    /* {event: KeyboardEvent, value: "3333333", time: 0.17083499999716878, type: "keyboard"} */
+    /* {event: KeyboardEvent, value: "9876543210", time: 0.07083499999716878, type: "scanner"} */
+    /* {event: KeyboardEvent, value: "0123456789", time: 0.17083499999716878, type: "keyboard"} */
   }
 
   public onDelete(event: IDelete) {
     console.log(event);
-    /* {event: KeyboardEvent, value: "3333333", type: "delete"} */
+    /* {event: KeyboardEvent, value: "0123456789", type: "delete"} */
   }
 }
 ```
