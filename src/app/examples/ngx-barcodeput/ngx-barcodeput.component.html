@@ -3,19 +3,17 @@
   ngxBarCodePut
   maxlength="14"
   [skipStart]="2"
-  [debounce]="300"
+  [debounce]="1000"
   autocomplete="off"
   [workMode]="'multiple'"
   [matTooltipPosition]="'right'"
   placeholder="Type or scan code"
-  (onDelete)="onDelete($event)"
+  (delete)="onDelete($event)"
   [disabled]="isMobile || isTablet"
-  (onDetected)="onDetected($event)"
+  (detected)="onDetected($event)"
   matTooltip="Press the focus on the input box and scan the item" />
 
-<div class="common-info">
-  {{ exampleCodes | json }}
-</div>
+<div class="common-info">Codes: {{ exampleCodes | json }}</div>
 
 <div class="container-info">
   Input Type: {{ inputType }} <br />

@@ -1,12 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-/*
-import {IDelete, IDetect} from 'ngx-barcodeput';
-*/
+import { IDelete, IDetect, NgxBarCodePutDirective } from 'ngx-barcodeput';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { DeviceDetectorService, DeviceInfo } from 'ngx-device-detector';
 
-import { NgxBarCodePutDirective } from '../../../../projects/ngx-barcodeput/src/lib/directive/ngx-barcodeput.directive';
 
 @Component({
   selector: 'app-ngx-barcodeput',
@@ -19,7 +16,7 @@ export class NgxBarCodePutComponent {
   /**
    * Used for example
    */
-  public delayTime: string = '';
+  public delayTime: number = 0;
   public inputType: string = '';
   public exampleCodes: string[] = [];
 
@@ -34,16 +31,18 @@ export class NgxBarCodePutComponent {
 
   constructor(private deviceService: DeviceDetectorService) {}
 
-  public onDetected(event: any): void {
-    this.delayTime = event.time;
-    this.inputType = event.type;
+  public onDetected(event: IDetect): void {
+    this.delayTime = event.time ? event.time : 0;
+    this.inputType = event.type ? event.type : '';
 
     console.info(event);
 
-    this.exampleCodes.push(event.value);
+    if (event.value) {
+      this.exampleCodes.push(event.value);
+    }
   }
 
-  public onDelete(event: any): void {
+  public onDelete(event: IDelete): void {
     /**
      * Used to clear data.
      */

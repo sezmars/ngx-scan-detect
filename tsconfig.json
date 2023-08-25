@@ -20,6 +20,9 @@
     "useDefineForClassFields": false,
     "lib": ["ES2022", "dom"],
     "paths": {
+      "ngx-barcodeput": [
+        "dist/ngx-barcodeput"
+      ],
       "ngx-barcodeput/*": [
         "dist/ngx-barcodeput/*"
       ]

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ngx-barcodeput": {
+    "ngx-barcodeput-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -18,7 +18,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ngx-barcodeput",
+            "outputPath": "dist/ngx-barcodeput-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "allowedCommonJsDependencies": [
@@ -74,10 +74,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "ngx-barcodeput:build:production"
+              "browserTarget": "ngx-barcodeput-app:build:production"
             },
             "development": {
-              "browserTarget": "ngx-barcodeput:build:development"
+              "browserTarget": "ngx-barcodeput-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -85,7 +85,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ngx-barcodeput:build"
+            "browserTarget": "ngx-barcodeput-app:build"
           }
         },
         "test": {
@@ -115,7 +115,7 @@
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
           "options": {
-            "baseHref": "https://sezmars.github.io/ngx-barcodeput/",
+            "baseHref": "https://sezmars.github.io/ngx-barcodeput-app/",
             "name": "User Weather Angular App with standalone components"
           }
         },
@@ -131,11 +131,11 @@
         "cypress-run": {
           "builder": "@cypress/schematic:cypress",
           "options": {
-            "devServerTarget": "ngx-barcodeput:serve"
+            "devServerTarget": "ngx-barcodeput-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ngx-barcodeput:serve:production"
+              "devServerTarget": "ngx-barcodeput-app:serve:production"
             }
           }
         },
@@ -149,28 +149,70 @@
         "ct": {
           "builder": "@cypress/schematic:cypress",
           "options": {
-            "devServerTarget": "ngx-barcodeput:serve",
+            "devServerTarget": "ngx-barcodeput-app:serve",
             "watch": true,
             "headless": false,
             "testingType": "component"
           },
           "configurations": {
             "development": {
-              "devServerTarget": "ngx-barcodeput:serve:development"
+              "devServerTarget": "ngx-barcodeput-app:serve:development"
             }
           }
         },
         "e2e": {
           "builder": "@cypress/schematic:cypress",
           "options": {
-            "devServerTarget": "ngx-barcodeput:serve",
+            "devServerTarget": "ngx-barcodeput-app:serve",
             "watch": true,
             "headless": false
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ngx-barcodeput:serve:production"
+              "devServerTarget": "ngx-barcodeput-app:serve:production"
             }
+          }
+        }
+      }
+    },
+    "ngx-barcodeput": {
+      "projectType": "library",
+      "root": "projects/ngx-barcodeput",
+      "sourceRoot": "projects/ngx-barcodeput/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ngx-barcodeput/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-barcodeput/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ngx-barcodeput/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/ngx-barcodeput/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/ngx-barcodeput/**/*.ts",
+              "projects/ngx-barcodeput/**/*.html"
+            ]
           }
         }
       }
