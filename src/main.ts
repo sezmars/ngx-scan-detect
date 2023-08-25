@@ -8,7 +8,7 @@ import {
 } from '@angular/router';
 
 import { AppComponent } from './app/app.component';
-import { APP_ROUTES } from './app/app.routing.module';
+import { APP_ROUTES } from './app/app.routing';
 import { environment } from './environments/environment';
 
 if (environment.production) {

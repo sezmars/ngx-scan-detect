@@ -7,9 +7,7 @@ import { NgxBarCodePutDirective } from './ngx-barcodeput.directive';
 @Component({
   template: `<input ngxBarCodePut />`,
 })
-class TestComponent {
-  public tooltipText: string = 'This is a tooltip';
-}
+class TestComponent {}
 
 describe('NgxBarcodeputDirective', () => {
   let fixture: ComponentFixture<TestComponent>;

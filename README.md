@@ -44,7 +44,7 @@ Like binding to a regular `type` event in a template, you can do something like 
 
 ```HTML
 <input ngxBarCodePut
-       (onDetected)="onDetected($event)">
+       (detected)="onDetected($event)">
 ```
 
 
@@ -57,46 +57,26 @@ npm install --save ngx-barcodeput
 
 ## Usage
 
-Add `NgxBarCodePutModule` to your list of module imports:
-
-```typescript
-import { NgxBarCodePutModule } from 'ngx-barcodeput';
-
-@NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule, FormsModule, NgxBarCodePutModule],
-  bootstrap: [AppComponent]
-})
-class AppModule {}
-```
-
 You can then use the directive in your templates:
 
 ```typescript
 @Component({
-  selector: 'app',
-  template: `
-    <input type="text"
-       ngxBarCodePut
-       maxlength="14"
-       [skipStart]="3"
-       [debounce]="300"
-       autocomplete="off"
-       [workMode]="'multiple'"
-       (onDelete)="onDelete($event)"
-       (onDetected)="onDetected($event)">
-       `
+  selector: 'app-ngx-barcodeput',
+  templateUrl: './ngx-barcodeput.component.html',
+  styleUrls: ['./ngx-barcodeput.component.scss'],
+  standalone: true,
+  imports: [CommonModule, NgxBarCodePutDirective],
 })
 
 export class AppComponent {
   public onDetected(event: IDetect) {
-    console.log(event); 
+    console.info(event); 
     /* {event: KeyboardEvent, value: "sezmars", time: 0.07083499999716878, type: "scanner"} */
     /* {event: KeyboardEvent, value: "3333333", time: 0.17083499999716878, type: "keyboard"} */
   }
 
   public onDelete(event: IDelete) {
-    console.log(event);
+    console.info(event);
     /* {event: KeyboardEvent, value: "3333333", type: "delete"} */
   }
 }
@@ -104,10 +84,10 @@ export class AppComponent {
 
 ### Options
 
-| Property name | Type | Default  | Description                                                                                                                                    |
-|---------------| ---- |----------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| `debounce`    | number | `0`      | This property is necessary for scenarios such as type-ahead where the rate of user input must be controlled.                                   |
-| `skipStart`   | number | `0`      | Allows you to ignore the first values of the length of the input data. The search begins after entering the first character if the value is 0. |
-| `workMode`    | event | `manual` | This property controls the automatic clearing of the input field.                                                                              |
-| `onDetected`  | event | `empty`  | Returns object with keyboard event, input value, data entry time and device type: ` keyboard or scanner`.                                      |
-| `onDelete`    | event | `empty`  | Returns an object with input value, keyboard event, and type.                                                                                  |
+| Property name | Type   | Default | Description                                                                                                                                    |
+|---------------|--------| ------ |------------------------------------------------------------------------------------------------------------------------------------------------|
+| `debounce`    | number | `0` | This property is necessary for scenarios such as type-ahead where the rate of user input must be controlled.                                   |
+| `workMode`    | string | `manual` | This property controls the automatic clearing of the input field.                                                                              |
+| `skipStart`   | number | `0` | Allows you to ignore the first values of the length of the input data. The search begins after entering the first character if the value is 0. |
+| `detected`    | event  | `empty` | Returns object with keyboard event, input value, data entry time and device type: ` keyboard or scanner`.                                      |
+| `delete`      | event  | `empty` | Returns an object with input value, keyboard event, and type.                                                                                  |
