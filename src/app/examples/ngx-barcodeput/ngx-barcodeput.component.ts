@@ -1,48 +1,52 @@
 import {Component} from '@angular/core';
+/*
 import {IDelete, IDetect} from 'ngx-barcodeput';
+*/
 import {DeviceDetectorService, DeviceInfo} from 'ngx-device-detector';
+import {CommonModule} from '@angular/common';
+import {NgxBarCodePutDirective} from '../../../../projects/ngx-barcodeput/src/lib/directive/ngx-barcodeput.directive';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-ngx-barcodeput',
   templateUrl: './ngx-barcodeput.component.html',
-  styleUrls: ['./ngx-barcodeput.component.scss']
+  styleUrls: ['./ngx-barcodeput.component.scss'],
+  standalone: true,
+  imports: [CommonModule, NgxBarCodePutDirective, MatTooltipModule]
 })
 export class NgxBarCodePutComponent {
-  public userAgent: string;
-  public isMobile: boolean;
-  public isTablet: boolean;
-
   /**
    * Used for example
    */
-  public delayTime: number = null;
+  public delayTime: string = '';
+  public inputType: string = '';
+  public exampleCodes: string[] = [];
 
   /**
-   * Used for example
+   * Used for additional info
    */
-  public inputType: string = null;
-
   private deviceInfo: DeviceInfo = this.deviceService.getDeviceInfo();
 
-  constructor(private deviceService: DeviceDetectorService) {
-    this.userAgent = this.deviceInfo.userAgent;
-    this.isMobile = deviceService.isMobile();
-    this.isTablet = deviceService.isTablet();
-  }
+  public userAgent: string = this.deviceInfo.userAgent;
+  public isMobile: boolean = this.deviceService.isMobile();
+  public isTablet: boolean = this.deviceService.isTablet();
 
-  public onDetected(event: IDetect) {
+  constructor(private deviceService: DeviceDetectorService) {}
+
+  public onDetected(event: any) {
     this.delayTime = event.time;
     this.inputType = event.type;
 
-    console.log(event);
+    console.info(event);
+
+    this.exampleCodes.push(event.value);
   }
 
-  public onDelete(event: IDelete) {
+  public onDelete(event: any) {
 
     /**
      * Used to clear data.
      */
-    console.log(event);
+    console.info(event);
   }
-
 }

@@ -1,12 +1,31 @@
-import { enableProdMode } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-
-import { AppModule } from './app/app.module';
-import { environment } from './environments/environment';
+import {
+    enableProdMode,
+} from '@angular/core';
+import {bootstrapApplication} from '@angular/platform-browser';
+import {
+    InMemoryScrollingFeature,
+    InMemoryScrollingOptions,
+    provideRouter,
+    withInMemoryScrolling,
+} from '@angular/router';
+import {AppComponent} from './app/app.component';
+import {environment} from './environments/environment';
+import {APP_ROUTES} from './app/app.routing.module';
 
 if (environment.production) {
-  enableProdMode();
+    enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.error(err));
+const scrollConfig: InMemoryScrollingOptions = {
+    scrollPositionRestoration: 'top',
+    anchorScrolling: 'enabled',
+};
+
+const inMemoryScrollingFeature: InMemoryScrollingFeature =
+    withInMemoryScrolling(scrollConfig);
+
+bootstrapApplication(AppComponent, {
+    providers: [
+        provideRouter([...APP_ROUTES], inMemoryScrollingFeature)
+    ]
+}).then();

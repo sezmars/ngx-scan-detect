@@ -3,29 +3,40 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "barcode-scanner-input-detect": {
-      "root": "",
-      "sourceRoot": "src",
+    "ngx-barcodeput": {
       "projectType": "application",
-      "prefix": "app",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "style": "scss",
+          "changeDetection": "OnPush"
         }
       },
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
-            "outputPath": "dist/barcode-scanner-input-detect",
+            "outputPath": "dist/ngx-barcodeput",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.app.json",
+            "allowedCommonJsDependencies": [
+              "leaflet"
+            ],
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "*.png",
+                "input": "node_modules/leaflet/dist/images/",
+                "output": "assets/leaflet/"
+              }
             ],
             "styles": [
               "src/styles.scss"
@@ -34,122 +45,142 @@
           },
           "configurations": {
             "production": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "namedChunks": false,
-              "aot": true,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "6kb"
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
                 }
-              ]
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
             }
-          }
+          },
+          "defaultConfiguration": "production"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "barcode-scanner-input-detect:build"
-          },
           "configurations": {
             "production": {
-              "browserTarget": "barcode-scanner-input-detect:build:production"
+              "browserTarget": "ngx-barcodeput:build:production"
+            },
+            "development": {
+              "browserTarget": "ngx-barcodeput:build:development"
             }
-          }
+          },
+          "defaultConfiguration": "development"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "barcode-scanner-input-detect:build"
+            "browserTarget": "ngx-barcodeput:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.spec.json",
-            "karmaConfig": "src/karma.conf.js",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets",
+              {
+                "glob": "*.png",
+                "input": "node_modules/leaflet/dist/images/",
+                "output": "assets/leaflet/"
+              }
+            ],
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": [],
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ]
+            "scripts": []
+          }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "baseHref": "https://sezmars.github.io/ngx-barcodeput/",
+            "name": "User Weather Angular App with standalone components"
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "src/tsconfig.app.json",
-              "src/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
             ]
           }
-        }
-      }
-    },
-    "ngx-barcodeput": {
-      "root": "projects/ngx-barcodeput",
-      "sourceRoot": "projects/ngx-barcodeput/src",
-      "projectType": "library",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
+        },
+        "cypress-run": {
+          "builder": "@cypress/schematic:cypress",
           "options": {
-            "tsConfig": "projects/ngx-barcodeput/tsconfig.lib.json",
-            "project": "projects/ngx-barcodeput/ng-package.json"
-          }
-        ,          "configurations": {
+            "devServerTarget": "ngx-barcodeput:serve"
+          },
+          "configurations": {
             "production": {
-              "tsConfig": "projects/ngx-barcodeput/tsconfig.lib.prod.json"
+              "devServerTarget": "ngx-barcodeput:serve:production"
             }
           }
-},
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+        },
+        "cypress-open": {
+          "builder": "@cypress/schematic:cypress",
           "options": {
-            "main": "projects/ngx-barcodeput/src/test.ts",
-            "tsConfig": "projects/ngx-barcodeput/tsconfig.spec.json",
-            "karmaConfig": "projects/ngx-barcodeput/karma.conf.js"
+            "watch": true,
+            "headless": false
           }
         },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+        "ct": {
+          "builder": "@cypress/schematic:cypress",
           "options": {
-            "tsConfig": [
-              "projects/ngx-barcodeput/tsconfig.lib.json",
-              "projects/ngx-barcodeput/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "devServerTarget": "ngx-barcodeput:serve",
+            "watch": true,
+            "headless": false,
+            "testingType": "component"
+          },
+          "configurations": {
+            "development": {
+              "devServerTarget": "ngx-barcodeput:serve:development"
+            }
+          }
+        },
+        "e2e": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "ngx-barcodeput:serve",
+            "watch": true,
+            "headless": false
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ngx-barcodeput:serve:production"
+            }
           }
         }
       }
     }
   },
-  "defaultProject": "barcode-scanner-input-detect"
+  "cli": {
+    "schematicCollections": [
+      "@cypress/schematic",
+      "@angular-eslint/schematics",
+      "@schematics/angular"
+    ]
+  }
 }

@@ -1,7 +1,7 @@
 # ngx-barcodeput [![NPM version](https://img.shields.io/npm/v/ngx-barcodeput.svg?style=flat)](https://www.npmjs.com/package/ngx-barcodeput) [![NPM monthly downloads](https://img.shields.io/npm/dm/ngx-barcodeput.svg?style=flat)](https://npmjs.org/package/ngx-barcodeput)  [![NPM total downloads](https://img.shields.io/npm/dt/ngx-barcodeput.svg?style=flat)](https://npmjs.org/package/ngx-barcodeput) [![Made with Angular](https://img.shields.io/badge/Made%20with-Angular-E13137.svg)](https://angular.io)
 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.3.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.2.
 
 ## Development server
 
@@ -9,7 +9,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ### OR
 
-Go to [Barcode Scanner Input Detect](https://sezmars.github.io/barcode-scanner-input-detect/).
+Go to [ngx-barcodeput](https://github.com/sezmars/ngx-barcodeput).
 
 ## Code scaffolding
 
@@ -82,6 +82,7 @@ You can then use the directive in your templates:
        [skipStart]="3"
        [debounce]="300"
        autocomplete="off"
+       [workMode]="'multiple'"
        (onDelete)="onDelete($event)"
        (onDetected)="onDetected($event)">
        `
@@ -103,9 +104,10 @@ export class AppComponent {
 
 ### Options
 
-| Property name | Type | Default | Description |
-| ------------- | ---- | ------- | ----------- |
-| `debounce` | number | `0` | This property is necessary for scenarios such as type-ahead where the rate of user input must be controlled. |
-| `skipStart` | number | `0` | Allows you to ignore the first values of the length of the input data. The search begins after entering the first character if the value is 0.|
-| `onDetected` | event | `empty` | Returns object with keyboard event, input value, data entry time and device type: ` keyboard or scanner`. |
-| `onDelete` | event | `empty` | Returns an object with input value, keyboard event, and type. |
+| Property name | Type | Default  | Description                                                                                                                                    |
+|---------------| ---- |----------|------------------------------------------------------------------------------------------------------------------------------------------------|
+| `debounce`    | number | `0`      | This property is necessary for scenarios such as type-ahead where the rate of user input must be controlled.                                   |
+| `skipStart`   | number | `0`      | Allows you to ignore the first values of the length of the input data. The search begins after entering the first character if the value is 0. |
+| `workMode`    | event | `manual` | This property controls the automatic clearing of the input field.                                                                              |
+| `onDetected`  | event | `empty`  | Returns object with keyboard event, input value, data entry time and device type: ` keyboard or scanner`.                                      |
+| `onDelete`    | event | `empty`  | Returns an object with input value, keyboard event, and type.                                                                                  |
