@@ -1,31 +1,28 @@
+import { enableProdMode } from '@angular/core';
+import { bootstrapApplication } from '@angular/platform-browser';
 import {
-    enableProdMode,
-} from '@angular/core';
-import {bootstrapApplication} from '@angular/platform-browser';
-import {
-    InMemoryScrollingFeature,
-    InMemoryScrollingOptions,
-    provideRouter,
-    withInMemoryScrolling,
+  InMemoryScrollingFeature,
+  InMemoryScrollingOptions,
+  provideRouter,
+  withInMemoryScrolling,
 } from '@angular/router';
-import {AppComponent} from './app/app.component';
-import {environment} from './environments/environment';
-import {APP_ROUTES} from './app/app.routing.module';
+
+import { AppComponent } from './app/app.component';
+import { APP_ROUTES } from './app/app.routing.module';
+import { environment } from './environments/environment';
 
 if (environment.production) {
-    enableProdMode();
+  enableProdMode();
 }
 
 const scrollConfig: InMemoryScrollingOptions = {
-    scrollPositionRestoration: 'top',
-    anchorScrolling: 'enabled',
+  scrollPositionRestoration: 'top',
+  anchorScrolling: 'enabled',
 };
 
 const inMemoryScrollingFeature: InMemoryScrollingFeature =
-    withInMemoryScrolling(scrollConfig);
+  withInMemoryScrolling(scrollConfig);
 
 bootstrapApplication(AppComponent, {
-    providers: [
-        provideRouter([...APP_ROUTES], inMemoryScrollingFeature)
-    ]
+  providers: [provideRouter([...APP_ROUTES], inMemoryScrollingFeature)],
 }).then();

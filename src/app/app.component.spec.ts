@@ -6,13 +6,9 @@ import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
   beforeEach(() =>
-      TestBed.configureTestingModule({
-        imports: [
-          RouterTestingModule,
-          RouterLink,
-          RouterOutlet,
-        ],
-      })
+    TestBed.configureTestingModule({
+      imports: [RouterTestingModule, RouterLink, RouterOutlet],
+    })
   );
 
   it('should create the app', () => {
@@ -32,7 +28,7 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('.title')?.textContent).toContain(
-        'Barcode Scanner Input Detect'
+      'Barcode Scanner Input Detect'
     );
   });
 });

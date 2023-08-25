@@ -1,26 +1,27 @@
 <input
-        type="text"
-        ngxBarCodePut
-        maxlength="14"
-        [skipStart]="2"
-        [debounce]="300"
-        autocomplete="off"
-        [workMode]="'multiple'"
-        [matTooltipPosition]="'right'"
-        placeholder="Type or scan code"
-        (onDelete)="onDelete($event)"
-        [disabled]="isMobile || isTablet"
-        (onDetected)="onDetected($event)"
-        matTooltip="Press the focus on the input box and scan the item">
+  type="text"
+  ngxBarCodePut
+  maxlength="14"
+  [skipStart]="2"
+  [debounce]="300"
+  autocomplete="off"
+  [workMode]="'multiple'"
+  [matTooltipPosition]="'right'"
+  placeholder="Type or scan code"
+  (onDelete)="onDelete($event)"
+  [disabled]="isMobile || isTablet"
+  (onDetected)="onDetected($event)"
+  matTooltip="Press the focus on the input box and scan the item" />
 
 <div class="common-info">
-    {{exampleCodes | json}}
+  {{ exampleCodes | json }}
 </div>
 
 <div class="container-info">
-    Input Type: {{inputType}} <br> Entry Time: {{delayTime}}
+  Input Type: {{ inputType }} <br />
+  Entry Time: {{ delayTime }}
 </div>
 
 <div class="common-info">
-    {{(isMobile || isTablet) ? 'Not supported on mobile devices.' : userAgent}}
+  {{ isMobile || isTablet ? 'Not supported on mobile devices.' : userAgent }}
 </div>

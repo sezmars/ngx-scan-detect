@@ -1,18 +1,19 @@
-import {Component} from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 /*
 import {IDelete, IDetect} from 'ngx-barcodeput';
 */
-import {DeviceDetectorService, DeviceInfo} from 'ngx-device-detector';
-import {CommonModule} from '@angular/common';
-import {NgxBarCodePutDirective} from '../../../../projects/ngx-barcodeput/src/lib/directive/ngx-barcodeput.directive';
-import {MatTooltipModule} from '@angular/material/tooltip';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { DeviceDetectorService, DeviceInfo } from 'ngx-device-detector';
+
+import { NgxBarCodePutDirective } from '../../../../projects/ngx-barcodeput/src/lib/directive/ngx-barcodeput.directive';
 
 @Component({
   selector: 'app-ngx-barcodeput',
   templateUrl: './ngx-barcodeput.component.html',
   styleUrls: ['./ngx-barcodeput.component.scss'],
   standalone: true,
-  imports: [CommonModule, NgxBarCodePutDirective, MatTooltipModule]
+  imports: [CommonModule, NgxBarCodePutDirective, MatTooltipModule],
 })
 export class NgxBarCodePutComponent {
   /**
@@ -33,7 +34,7 @@ export class NgxBarCodePutComponent {
 
   constructor(private deviceService: DeviceDetectorService) {}
 
-  public onDetected(event: any) {
+  public onDetected(event: any): void {
     this.delayTime = event.time;
     this.inputType = event.type;
 
@@ -42,8 +43,7 @@ export class NgxBarCodePutComponent {
     this.exampleCodes.push(event.value);
   }
 
-  public onDelete(event: any) {
-
+  public onDelete(event: any): void {
     /**
      * Used to clear data.
      */
