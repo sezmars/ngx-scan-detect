@@ -36,7 +36,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 [![NPM](https://nodei.co/npm/ngx-barcodeput.png?compact=true)](https://nodei.co/npm/ngx-barcodeput/)
 
-**[Demo](https://sezmars.github.io/barcode-scanner-input-detect/)**
+**[Demo](https://sezmars.github.io/ngx-barcodeput/)**
 
 Angular directive for handling input events. Useful for determine input using a barcode-scanner.
 
