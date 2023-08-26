@@ -6,6 +6,8 @@ Detects barcode or qr code scanning on document and emits the scanned barcode.
 
 **[Demo](https://sezmars.github.io/ngx-scan-detect/)**
 
+[Video Demo](https://github.com/sezmars/ngx-scan-detect/blob/main/demo.mp4)
+
 Angular directive for handling input events. Useful for determine input using a barcode-scanner.
 
 Like binding to a regular `type` event in a template, you can do something like this:
