@@ -1,5 +1,7 @@
 # ngx-scan-detect
 
+Detects barcode or qr code scanning on document and emits the scanned barcode.
+
 [![NPM](https://nodei.co/npm/ngx-scan-detect.png?compact=true)](https://nodei.co/npm/ngx-scan-detect/)
 
 **[Demo](https://sezmars.github.io/ngx-scan-detect/)**

@@ -1,5 +1,8 @@
-# ngx-scan-detect [![NPM version](https://img.shields.io/npm/v/ngx-scan-detect.svg?style=flat)](https://www.npmjs.com/package/ngx-scan-detect) [![NPM monthly downloads](https://img.shields.io/npm/dm/ngx-scan-detect.svg?style=flat)](https://npmjs.org/package/ngx-scan-detect)  [![NPM total downloads](https://img.shields.io/npm/dt/ngx-scan-detect.svg?style=flat)](https://npmjs.org/package/ngx-scan-detect) [![Made with Angular](https://img.shields.io/badge/Made%20with-Angular-E13137.svg)](https://angular.io)
+# ngx-scan-detect 
 
+Detects barcode or qr code scanning on document and emits the scanned barcode.
+
+[![NPM version](https://img.shields.io/npm/v/ngx-scan-detect.svg?style=flat)](https://www.npmjs.com/package/ngx-scan-detect) [![NPM monthly downloads](https://img.shields.io/npm/dm/ngx-scan-detect.svg?style=flat)](https://npmjs.org/package/ngx-scan-detect)  [![NPM total downloads](https://img.shields.io/npm/dt/ngx-scan-detect.svg?style=flat)](https://npmjs.org/package/ngx-scan-detect) [![Made with Angular](https://img.shields.io/badge/Made%20with-Angular-E13137.svg)](https://angular.io)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.2.
 
