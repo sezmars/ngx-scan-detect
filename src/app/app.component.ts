@@ -9,5 +9,5 @@ import { RouterOutlet } from '@angular/router';
   imports: [RouterOutlet],
 })
 export class AppComponent {
-  public title: string = 'Barcode Scanner Input Detect';
+  public title: string = 'Barcode Scanner Input Detect | ngx-scan-detect';
 }

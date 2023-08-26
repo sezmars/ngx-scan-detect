@@ -17,10 +17,10 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'Barcode Scanner Input Detect'`, () => {
+  it(`should have as title 'Barcode Scanner Input Detect | ngx-scan-detect'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('Barcode Scanner Input Detect');
+    expect(app.title).toEqual('Barcode Scanner Input Detect | ngx-scan-detect');
   });
 
   it('should render title', () => {
@@ -28,7 +28,7 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('.title')?.textContent).toContain(
-      'Barcode Scanner Input Detect'
+      'Barcode Scanner Input Detect | ngx-scan-detect'
     );
   });
 });

@@ -1,7 +1,7 @@
 describe('Initial Test', () => {
   it('Visits the initial project page', () => {
     cy.visit('/');
-    cy.contains('Welcome to Barcode Scanner Input Detect!');
+    cy.contains('Welcome to Barcode Scanner Input Detect | ngx-scan-detect!');
   });
 });
 
