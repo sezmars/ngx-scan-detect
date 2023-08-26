@@ -1,15 +1,15 @@
 {
-  "name": "ngx-barcodeput",
+  "name": "ngx-scan-detect",
   "version": "2.0.0",
   "description": "This repository helps determine input using a barcode-scanner.",
   "author": "Roman Kolesnikov / @sezmars",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sezmars/ngx-barcodeput.git"
+    "url": "https://github.com/sezmars/ngx-scan-detect.git"
   },
-  "homepage": "https://sezmars.github.io/ngx-barcodeput",
+  "homepage": "https://sezmars.github.io/ngx-scan-detect",
   "bugs": {
-    "url": "https://github.com/sezmars/ngx-barcodeput/issues"
+    "url": "https://github.com/sezmars/ngx-scan-detect/issues"
   },
   "license": "MIT",
   "keywords": [
@@ -30,7 +30,7 @@
     "scanner input recognizer",
     "scanner-input-recognizer",
     "barcode scanner input detect",
-    "ngx-barcodeput",
+    "ngx-scan-detect",
     "barcode scanner input definer",
     "barcode-scanner-input-definer",
     "barcode scanner input recognizer",
@@ -41,7 +41,7 @@
     "start": "ng serve",
     "build": "ng build",
     "build:prod": "ng build --configuration production",
-    "build:lib": "ng build ngx-barcodeput --configuration production",
+    "build:lib": "ng build ngx-scan-detect --configuration production",
     "test": "ng test",
     "test:ci": "npm test -- --watch=false --browsers=ChromeHeadless",
     "e2e": "ng e2e",

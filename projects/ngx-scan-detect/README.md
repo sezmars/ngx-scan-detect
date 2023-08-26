@@ -1,8 +1,8 @@
-# ngx-barcodeput
+# ngx-scan-detect
 
-[![NPM](https://nodei.co/npm/ngx-barcodeput.png?compact=true)](https://nodei.co/npm/ngx-barcodeput/)
+[![NPM](https://nodei.co/npm/ngx-scan-detect.png?compact=true)](https://nodei.co/npm/ngx-scan-detect/)
 
-**[Demo](https://sezmars.github.io/ngx-barcodeput/)**
+**[Demo](https://sezmars.github.io/ngx-scan-detect/)**
 
 Angular directive for handling input events. Useful for determine input using a barcode-scanner.
 
@@ -17,7 +17,7 @@ Like binding to a regular `type` event in a template, you can do something like 
 ## Installation
 
 ```shell
-npm install --save ngx-barcodeput
+npm install --save ngx-scan-detect
 ```
 
 
@@ -27,9 +27,9 @@ You can then use the directive in your templates:
 
 ```typescript
 @Component({
-  selector: 'app-ngx-barcodeput',
-  templateUrl: './ngx-barcodeput.component.html',
-  styleUrls: ['./ngx-barcodeput.component.scss'],
+  selector: 'app-ngx-scan-detect',
+  templateUrl: './ngx-scan-detect.component.html',
+  styleUrls: ['./ngx-scan-detect.component.scss'],
   standalone: true,
   imports: [CommonModule, NgxBarCodePutDirective],
 })

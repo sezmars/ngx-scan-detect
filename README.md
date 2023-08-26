@@ -1,4 +1,4 @@
-# ngx-barcodeput [![NPM version](https://img.shields.io/npm/v/ngx-barcodeput.svg?style=flat)](https://www.npmjs.com/package/ngx-barcodeput) [![NPM monthly downloads](https://img.shields.io/npm/dm/ngx-barcodeput.svg?style=flat)](https://npmjs.org/package/ngx-barcodeput)  [![NPM total downloads](https://img.shields.io/npm/dt/ngx-barcodeput.svg?style=flat)](https://npmjs.org/package/ngx-barcodeput) [![Made with Angular](https://img.shields.io/badge/Made%20with-Angular-E13137.svg)](https://angular.io)
+# ngx-scan-detect [![NPM version](https://img.shields.io/npm/v/ngx-scan-detect.svg?style=flat)](https://www.npmjs.com/package/ngx-scan-detect) [![NPM monthly downloads](https://img.shields.io/npm/dm/ngx-scan-detect.svg?style=flat)](https://npmjs.org/package/ngx-scan-detect)  [![NPM total downloads](https://img.shields.io/npm/dt/ngx-scan-detect.svg?style=flat)](https://npmjs.org/package/ngx-scan-detect) [![Made with Angular](https://img.shields.io/badge/Made%20with-Angular-E13137.svg)](https://angular.io)
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.2.
@@ -9,7 +9,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ### OR
 
-Go to [ngx-barcodeput](https://github.com/sezmars/ngx-barcodeput).
+Go to [ngx-scan-detect](https://github.com/sezmars/ngx-scan-detect).
 
 ## Code scaffolding
 
@@ -32,11 +32,11 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 
-# ngx-barcodeput
+# ngx-scan-detect
 
-[![NPM](https://nodei.co/npm/ngx-barcodeput.png?compact=true)](https://nodei.co/npm/ngx-barcodeput/)
+[![NPM](https://nodei.co/npm/ngx-scan-detect.png?compact=true)](https://nodei.co/npm/ngx-scan-detect/)
 
-**[Demo](https://sezmars.github.io/ngx-barcodeput/)**
+**[Demo](https://sezmars.github.io/ngx-scan-detect/)**
 
 Angular directive for handling input events. Useful for determine input using a barcode-scanner.
 
@@ -51,7 +51,7 @@ Like binding to a regular `type` event in a template, you can do something like 
 ## Installation
 
 ```shell
-npm install --save ngx-barcodeput
+npm install --save ngx-scan-detect
 ```
 
 
@@ -61,9 +61,9 @@ You can then use the directive in your templates:
 
 ```typescript
 @Component({
-  selector: 'app-ngx-barcodeput',
-  templateUrl: './ngx-barcodeput.component.html',
-  styleUrls: ['./ngx-barcodeput.component.scss'],
+  selector: 'app-ngx-scan-detect',
+  templateUrl: './ngx-scan-detect.component.html',
+  styleUrls: ['./ngx-scan-detect.component.scss'],
   standalone: true,
   imports: [CommonModule, NgxBarCodePutDirective],
 })

@@ -20,11 +20,11 @@
     "useDefineForClassFields": false,
     "lib": ["ES2022", "dom"],
     "paths": {
-      "ngx-barcodeput": [
-        "dist/ngx-barcodeput"
+      "ngx-scan-detect": [
+        "dist/ngx-scan-detect"
       ],
-      "ngx-barcodeput/*": [
-        "dist/ngx-barcodeput/*"
+      "ngx-scan-detect/*": [
+        "dist/ngx-scan-detect/*"
       ]
     }
   },

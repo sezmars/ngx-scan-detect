@@ -35,10 +35,10 @@ interface ExtendedKeyboardEvent extends KeyboardEvent {
 }
 
 @Directive({
-  selector: '[ngxBarCodePut]',
+  selector: '[ngxScanDetect]',
   standalone: true,
 })
-export class NgxBarCodePutDirective implements AfterViewInit, OnDestroy {
+export class NgxScanDetectDirective implements AfterViewInit, OnDestroy {
   /**
    * Working Mode
    */

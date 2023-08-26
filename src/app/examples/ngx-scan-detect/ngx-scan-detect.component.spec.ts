@@ -4,11 +4,11 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { NgxBarCodePutComponent } from './ngx-barcodeput.component';
+import { NgxScanDetectComponent } from './ngx-scan-detect.component';
 
-describe('NgxBarCodePutComponent', () => {
-  let component: NgxBarCodePutComponent;
-  let fixture: ComponentFixture<NgxBarCodePutComponent>;
+describe('NgxScanDetectComponent', () => {
+  let component: NgxScanDetectComponent;
+  let fixture: ComponentFixture<NgxScanDetectComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -23,7 +23,7 @@ describe('NgxBarCodePutComponent', () => {
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NgxBarCodePutComponent);
+    fixture = TestBed.createComponent(NgxScanDetectComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

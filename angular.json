@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ngx-barcodeput-app": {
+    "ngx-scan-detect-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -18,7 +18,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ngx-barcodeput-app",
+            "outputPath": "dist/ngx-scan-detect-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "allowedCommonJsDependencies": [
@@ -74,10 +74,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "ngx-barcodeput-app:build:production"
+              "browserTarget": "ngx-scan-detect-app:build:production"
             },
             "development": {
-              "browserTarget": "ngx-barcodeput-app:build:development"
+              "browserTarget": "ngx-scan-detect-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -85,7 +85,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ngx-barcodeput-app:build"
+            "browserTarget": "ngx-scan-detect-app:build"
           }
         },
         "test": {
@@ -115,7 +115,7 @@
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
           "options": {
-            "baseHref": "https://sezmars.github.io/ngx-barcodeput-app/",
+            "baseHref": "https://sezmars.github.io/ngx-scan-detect-app/",
             "name": "User Weather Angular App with standalone components"
           }
         },
@@ -131,11 +131,11 @@
         "cypress-run": {
           "builder": "@cypress/schematic:cypress",
           "options": {
-            "devServerTarget": "ngx-barcodeput-app:serve"
+            "devServerTarget": "ngx-scan-detect-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ngx-barcodeput-app:serve:production"
+              "devServerTarget": "ngx-scan-detect-app:serve:production"
             }
           }
         },
@@ -149,49 +149,49 @@
         "ct": {
           "builder": "@cypress/schematic:cypress",
           "options": {
-            "devServerTarget": "ngx-barcodeput-app:serve",
+            "devServerTarget": "ngx-scan-detect-app:serve",
             "watch": true,
             "headless": false,
             "testingType": "component"
           },
           "configurations": {
             "development": {
-              "devServerTarget": "ngx-barcodeput-app:serve:development"
+              "devServerTarget": "ngx-scan-detect-app:serve:development"
             }
           }
         },
         "e2e": {
           "builder": "@cypress/schematic:cypress",
           "options": {
-            "devServerTarget": "ngx-barcodeput-app:serve",
+            "devServerTarget": "ngx-scan-detect-app:serve",
             "watch": true,
             "headless": false
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ngx-barcodeput-app:serve:production"
+              "devServerTarget": "ngx-scan-detect-app:serve:production"
             }
           }
         }
       }
     },
-    "ngx-barcodeput": {
+    "ngx-scan-detect": {
       "projectType": "library",
-      "root": "projects/ngx-barcodeput",
-      "sourceRoot": "projects/ngx-barcodeput/src",
+      "root": "projects/ngx-scan-detect",
+      "sourceRoot": "projects/ngx-scan-detect/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/ngx-barcodeput/ng-package.json"
+            "project": "projects/ngx-scan-detect/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/ngx-barcodeput/tsconfig.lib.prod.json"
+              "tsConfig": "projects/ngx-scan-detect/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/ngx-barcodeput/tsconfig.lib.json"
+              "tsConfig": "projects/ngx-scan-detect/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -199,7 +199,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "tsConfig": "projects/ngx-barcodeput/tsconfig.spec.json",
+            "tsConfig": "projects/ngx-scan-detect/tsconfig.spec.json",
             "polyfills": [
               "zone.js",
               "zone.js/testing"
@@ -210,8 +210,8 @@
           "builder": "@angular-eslint/builder:lint",
           "options": {
             "lintFilePatterns": [
-              "projects/ngx-barcodeput/**/*.ts",
-              "projects/ngx-barcodeput/**/*.html"
+              "projects/ngx-scan-detect/**/*.ts",
+              "projects/ngx-scan-detect/**/*.html"
             ]
           }
         },

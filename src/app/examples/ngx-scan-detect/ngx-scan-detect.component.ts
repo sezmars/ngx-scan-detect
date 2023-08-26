@@ -3,16 +3,16 @@ import { Component } from '@angular/core';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { DeviceDetectorService, DeviceInfo } from 'ngx-device-detector';
 
-import { IDelete, IDetect, NgxBarCodePutDirective } from 'ngx-barcodeput';
+import { IDelete, IDetect, NgxScanDetectDirective } from 'ngx-scan-detect';
 
 @Component({
-  selector: 'app-ngx-barcodeput',
-  templateUrl: './ngx-barcodeput.component.html',
-  styleUrls: ['./ngx-barcodeput.component.scss'],
+  selector: 'app-ngx-scan-detect',
   standalone: true,
-  imports: [CommonModule, NgxBarCodePutDirective, MatTooltipModule],
+  imports: [CommonModule, NgxScanDetectDirective, MatTooltipModule],
+  templateUrl: './ngx-scan-detect.component.html',
+  styleUrls: ['./ngx-scan-detect.component.scss'],
 })
-export class NgxBarCodePutComponent {
+export class NgxScanDetectComponent {
   /**
    * Used for example
    */
