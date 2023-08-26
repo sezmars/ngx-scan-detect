@@ -67,12 +67,12 @@
     "eslint-import-resolver-typescript": "^3.6.0",
     "eslint-plugin-import": "^2.28.1",
     "ngx-device-detector": "^6.0.2",
+    "ngx-scan-detect": "^2.0.0",
     "rxjs": "~7.8.1",
     "tslib": "^2.6.2",
     "zone.js": "~0.13.1"
   },
   "devDependencies": {
-    "angular-cli-ghpages": "^1.0.6",
     "@angular-devkit/build-angular": "~16.2.0",
     "@angular-eslint/builder": "16.1.1",
     "@angular-eslint/eslint-plugin": "16.1.1",
@@ -88,6 +88,7 @@
     "@types/node": "^12.11.1",
     "@typescript-eslint/eslint-plugin": "5.62.0",
     "@typescript-eslint/parser": "5.62.0",
+    "angular-cli-ghpages": "^1.0.6",
     "codelyzer": "^6.0.2",
     "cypress": "latest",
     "eslint": "^8.47.0",
