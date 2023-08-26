@@ -115,7 +115,7 @@
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
           "options": {
-            "baseHref": "https://sezmars.github.io/ngx-scan-detect-app/",
+            "baseHref": "https://sezmars.github.io/ngx-scan-detect/",
             "name": "User Weather Angular App with standalone components"
           }
         },
