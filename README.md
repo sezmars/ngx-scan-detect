@@ -1,6 +1,6 @@
 # ngx-scan-detect 
 
-[Video Demo](demo.mp4)
+**[Demo](https://sezmars.github.io/ngx-scan-detect/)** | <a href="https://github.com/sezmars/ngx-scan-detect/blob/main/demo.mp4" target="_blank">Video Demo</a>
 
 Detects barcode or qr code scanning on document and emits the scanned barcode.
 

@@ -1,10 +1,16 @@
 {
   "root": true,
-  "ignorePatterns": ["projects/**/*"],
-  "plugins": ["import"],
+  "ignorePatterns": [
+    "projects/**/*"
+  ],
+  "plugins": [
+    "import"
+  ],
   "overrides": [
     {
-      "files": ["*.ts"],
+      "files": [
+        "*.ts"
+      ],
       "extends": [
         "eslint:recommended",
         "plugin:import/recommended",
@@ -23,7 +29,16 @@
       },
       "rules": {
         "@typescript-eslint/explicit-function-return-type": "error",
-        "no-console": ["error", { "allow": ["warn", "error", "info"] }],
+        "no-console": [
+          "error",
+          {
+            "allow": [
+              "warn",
+              "error",
+              "info"
+            ]
+          }
+        ],
         "@typescript-eslint/typedef": [
           "error",
           {
@@ -46,12 +61,15 @@
           {
             "groups": [
               "builtin",
-              // Built-in imports (come from NodeJS native) go first
+              // Built-in imports (come from Node.js native) go first
               "external",
               // <- External imports
               "internal",
               // <- Absolute imports
-              ["sibling", "parent"],
+              [
+                "sibling",
+                "parent"
+              ],
               // <- Relative imports, the sibling and parent types they can be mingled together
               "index",
               // <- index imports
@@ -64,7 +82,15 @@
               "order": "asc",
               /* ignore case. Options: [true, false] */
               "caseInsensitive": true
-            }
+            },
+            "pathGroups": [
+              {
+                "pattern": "ngx-*",
+                "group": "builtin",
+                "position": "after"
+              }
+            ],
+            "pathGroupsExcludedImportTypes": ["ngx-*"]
           }
         ],
         "@typescript-eslint/no-inferrable-types": "off",
@@ -87,7 +113,9 @@
       }
     },
     {
-      "files": ["*.html"],
+      "files": [
+        "*.html"
+      ],
       "extends": [
         "plugin:@angular-eslint/template/recommended",
         "plugin:@angular-eslint/template/accessibility",

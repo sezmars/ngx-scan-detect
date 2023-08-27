@@ -1,6 +1,6 @@
 {
   "name": "ngx-scan-detect",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "peerDependencies": {
     "@angular/common": "^16.2.0",
     "@angular/core": "^16.2.0"
@@ -8,5 +8,30 @@
   "dependencies": {
     "tslib": "^2.3.0"
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "keywords": [
+    "ngx",
+    "angular",
+    "barcode",
+    "scanner",
+    "detectet",
+    "definition",
+    "ngx-barcodeput",
+    "scanner parser",
+    "scanner-parser",
+    "barcode scanner",
+    "ngx-scan-detect",
+    "barcode-scanner",
+    "scanner input definer",
+    "scanner-input-definer",
+    "barcode scanner parser",
+    "barcode-scanner-parser",
+    "scanner input recognizer",
+    "scanner-input-recognizer",
+    "Barcode Scanner Input Detect",
+    "barcode scanner input definer",
+    "barcode-scanner-input-definer",
+    "barcode scanner input recognizer",
+    "barcode-scanner-input-recognizer"
+  ]
 }

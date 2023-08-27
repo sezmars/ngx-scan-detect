@@ -1,9 +1,9 @@
+import { DeviceDetectorService, DeviceInfo } from 'ngx-device-detector';
+import { IDelete, IDetect, NgxScanDetectDirective } from 'ngx-scan-detect';
+
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { DeviceDetectorService, DeviceInfo } from 'ngx-device-detector';
-
-import { IDelete, IDetect, NgxScanDetectDirective } from 'ngx-scan-detect';
 
 @Component({
   selector: 'app-ngx-scan-detect',
