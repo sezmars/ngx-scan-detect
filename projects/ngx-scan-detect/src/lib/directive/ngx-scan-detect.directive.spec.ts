@@ -12,14 +12,12 @@ class TestComponent {}
 describe('NgxBarcodeputDirective', () => {
   let fixture: ComponentFixture<TestComponent>;
   let tooltipElement: DebugElement;
-  let testComponent: TestComponent;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [ViewContainerRef],
     });
     fixture = TestBed.createComponent(TestComponent);
-    testComponent = fixture.componentInstance;
     tooltipElement = fixture.debugElement.query(
       By.directive(NgxScanDetectDirective)
     );

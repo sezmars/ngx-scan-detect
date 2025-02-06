@@ -35,7 +35,7 @@ interface ExtendedKeyboardEvent extends KeyboardEvent {
 }
 
 @Directive({
-  selector: '[ngxScanDetect]',
+  selector: 'input[ngxScanDetect]',
   standalone: true,
 })
 export class NgxScanDetectDirective implements AfterViewInit, OnDestroy {
@@ -135,7 +135,8 @@ export class NgxScanDetectDirective implements AfterViewInit, OnDestroy {
            * Return data after typed in two characters.
            */
           return (
-            (event.target as HTMLInputElement).value.length > this.skipStart
+            event.target instanceof HTMLInputElement &&
+            event.target.value.length > this.skipStart
           );
         }),
 
